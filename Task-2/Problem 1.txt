@@ -1,0 +1,94 @@
+Problem-1
+To check whether the given Number is divisible by 3 or not
+
+Pseudo code:
+declare integers a,r,N
+Input N (#the number to check)
+a=N/3
+r=N-3(a)
+if(r==0)
+print "divisible by 3"
+else
+print "not divisible by 3"
+ 
+Alternate method:(In c++😅 was too lazy to convert into flowchart and pseudocode)
+#include<iostream>
+using namespace std; 
+int sum_of_digits(int number)
+{
+int su=0,dig;
+while(number>0)
+{
+dig=number%10;
+su=su+dig;
+number=number/10;
+}
+return su;
+}
+int check(int s)
+{
+	if(s<=9)
+		{
+			if(s==3)
+			{
+				cout<<"true";
+			}
+			else
+			{
+				if(s==6)
+				{
+					cout<<"true";
+				}
+				else
+				{
+					if(s==9)
+					{
+						cout<<"true";
+					}
+					else
+					{
+						cout<<"false";
+					}
+				}
+			}
+		}	
+}
+int check2(int um)
+{
+
+    if(um<=9)
+	{
+	check(um);
+	}
+	else
+	{
+		while(um>9)
+		{
+		
+		um=sum_of_digits(um);
+	  check(um);
+	
+	 }
+}
+}
+	 
+int main()
+{
+	int N,sum=0;
+	cout<<"number";
+	cin>>N;
+    sum=sum_of_digits(N);
+   
+    if(sum<=9)
+	{
+	check2(sum);
+	}
+	else
+	{
+   check2(sum);
+	
+	 }
+	 
+	}
+
+
